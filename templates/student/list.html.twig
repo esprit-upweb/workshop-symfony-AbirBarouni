@@ -1,0 +1,20 @@
+<h1>La liste des étudiants</h1>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>USERNAME</td>
+        <td>EMAIL</td>
+        <td>MOYENNE</td>
+        <td>ACTION</td>
+    </tr>
+    {% for student in tabStudent %}
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.username }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.moyenne }}</td>
+
+            <td><a href="{{ path('studentDelete',{'id':student.id}) }}">Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>
